@@ -13,34 +13,12 @@
         android:layout_height="27dp"
         android:layout_marginStart="34dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="5dp"
         android:text="Digite o valor pago:"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="136dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="34dp"
-        android:backgroundTint="@android:color/black"
-        android:ems="10"
-        android:inputType="number"
-        android:selectAllOnFocus="false"
-        android:singleLine="false"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textCursorDrawable="@color/colorPrimary"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/gasolina" />
 
     <TextView
         android:id="@+id/textView4"
@@ -53,19 +31,19 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/editText6"
+        app:layout_constraintEnd_toStartOf="@+id/preco"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/preco"
         android:layout_width="136dp"
         android:layout_height="45dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="55dp"
         android:backgroundTint="@android:color/black"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberSigned|numberDecimal"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textCursorDrawable="@color/colorPrimary"
@@ -73,22 +51,23 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/pago" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/calcular"
         android:layout_width="136dp"
         android:layout_height="50dp"
         android:layout_marginStart="124dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="124dp"
         android:background="@color/colorPrimary"
+        android:onClick="calcular"
         android:text="CALCULAR"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/preco" />
 
     <TextView
         android:id="@+id/textView5"
@@ -106,7 +85,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/gasolina"
         android:layout_width="118dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
@@ -118,13 +97,13 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+        app:layout_constraintEnd_toStartOf="@+id/etanol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.6" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/etanol"
         android:layout_width="95dp"
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
@@ -135,11 +114,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toEndOf="@+id/gasolina"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/esperado"
         android:layout_width="100dp"
         android:layout_height="27dp"
         android:layout_marginStart="18dp"
@@ -152,7 +131,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
     <Button
         android:id="@+id/button7"
@@ -165,17 +144,17 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/editText8"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
     <EditText
         android:id="@+id/editText8"
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         android:layout_height="45dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@android:color/black"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberSigned|numberDecimal"
         android:selectAllOnFocus="false"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -183,7 +162,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
     <Button
         android:id="@+id/button8"
@@ -196,7 +175,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
     <TextView
         android:id="@+id/textView8"
@@ -231,5 +210,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <EditText
+        android:id="@+id/pago"
+        android:layout_width="136dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="34dp"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/etanol" />
 
 </android.support.constraint.ConstraintLayout>
